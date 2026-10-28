@@ -1,0 +1,13 @@
+[package]
+name = "sayanox-core"
+version = "0.1.0"
+edition = "2021"
+authors = ["Sayan Mahata <sayan9168>"]
+description = "Minimal browser engine for Sayanox Browser — HTML/CSS parsing, layout and software rasterizer"
+license = "MIT"
+repository = "https://github.com/sayan9168/sayanox-core"
+keywords = ["browser", "engine", "html", "css", "layout", "renderer"]
+categories = ["gui", "rendering", "parser-implementations"]
+
+[dependencies]
+# Will be added as needed (softbuffer, winit, etc.)
