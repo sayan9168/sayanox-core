@@ -1,11 +1,10 @@
-//! HTML Tokenizer and Parser
+//! A small, deliberately strict HTML subset.
 //!
-//! Responsible for turning HTML source into a DOM tree.
+//! This is not yet the HTML5 parsing algorithm: character references, raw-text
+//! elements, implied tags, and browser-style error recovery are not supported.
 
-// TODO: tokenizer
-// TODO: parser
-// TODO: DOM node types
+pub mod dom;
+pub mod parser;
+pub mod tokenizer;
 
-pub fn placeholder() {
-    // Will be implemented
-}
+pub use parser::parse;

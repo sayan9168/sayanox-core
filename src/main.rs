@@ -1,16 +1,15 @@
-//! Sayanox Core — Minimal browser engine
-//!
-//! Entry point for the engine. Currently a placeholder.
+//! Sayanox Core — Minimal browser engine.
 
-mod html;
 mod css;
-mod style;
+mod html;
 mod layout;
 mod paint;
+mod style;
 mod util;
 
-fn main() {
-    println!("Sayanox Core v0.1.0");
-    println!("Minimal browser engine for Sayanox Browser");
-    println!("Pipeline: HTML → DOM → CSS → Style → Layout → Paint");
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let html = r#"<main id="welcome"><h1>Hello, Sayanox!</h1><p>A tiny browser engine.<br>Written in Rust.</p><!-- More to come --></main>"#;
+    let document = html::parse(html)?;
+    println!("{document:#?}");
+    Ok(())
 }
