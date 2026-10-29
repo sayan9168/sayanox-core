@@ -23,13 +23,13 @@ It is intentionally minimal, clean, and written in pure Rust so that one person 
 
 | Stage | Component              | Status     |
 |-------|------------------------|------------|
-| 1     | HTML Tokenizer + Parser | Planned   |
-| 2     | DOM Tree               | Planned   |
-| 3     | CSS Parser             | Planned   |
-| 4     | Style Cascade          | Planned   |
-| 5     | Block Layout Engine    | Planned   |
-| 6     | Software Rasterizer    | Planned   |
-| 7     | Simple Window (winit / softbuffer) | Planned |
+| 1     | HTML Tokenizer + Parser | Done      |
+| 2     | DOM Tree               | Done      |
+| 3     | CSS Parser             | Done      |
+| 4     | Style Cascade          | Done      |
+| 5     | Block Layout Engine    | Done      |
+| 6     | Software Rasterizer    | Done      |
+| 7     | Simple Window (winit / softbuffer) | Done |
 | 8     | Basic JavaScript (later) | Future  |
 
 ---
@@ -57,8 +57,9 @@ sayanox-core/
 ```bash
 git clone https://github.com/sayan9168/sayanox-core.git
 cd sayanox-core
-cargo build
-cargo run
+cargo test
+cargo run                # Opens a window and renders the example page
+cargo run -- --headless  # Runs the full pipeline without opening a window
 ```
 
 ---
