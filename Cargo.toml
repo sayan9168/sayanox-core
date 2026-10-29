@@ -10,4 +10,8 @@ keywords = ["browser", "engine", "html", "css", "layout", "renderer"]
 categories = ["gui", "rendering", "parser-implementations"]
 
 [dependencies]
-# Will be added as needed (softbuffer, winit, etc.)
+# Minimal window + CPU framebuffer presentation. Win32 and macOS backends are
+# enabled automatically per target; on Linux we use X11 dlopen (which also works
+# on Wayland via XWayland) to avoid pulling in heavy 2D/font crates like tiny-skia.
+softbuffer = { version = "0.4", default-features = false, features = ["x11", "x11-dlopen"] }
+winit = { version = "0.30", default-features = false, features = ["rwh_06", "x11"] }
